@@ -4,11 +4,12 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>Mercure aux HumanTalks</title>
 
 		<link rel="stylesheet" href="css/reset.css">
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+		<link rel="stylesheet" href="css/theme/night.css">
+		<link rel="stylesheet" href="css/mercure.css">
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/monokai.css">
@@ -25,19 +26,87 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section data-markdown>
+					<textarea data-template>
+						# Mercure
+
+						Chloé Briquet, HumanTalks
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						## Sommaire
+
+						1. Mercure, c'est quoi ?
+						2. Comment ça fonctionne ?
+						3. Les petits plus cools
+					</textarea>
+				</section>
+				<section data-background-image="img/mercure-website.png">
+					<div class="over-background left">
+						<h2>Mercure, c'est quoi ?</h2>
+					</div>
+				</section>
+				<section>
+					<ul>
+						<li>Exploite HTTP/2</li>
+						<li>Fonctionnalité d'autorisation intégrée</li>
+						<li>Fonctionnalité de re-connexion intégrée</li>
+						<li>Facile à sécuriser</li>
+					</ul>
+					<aside class="notes">
+						<ul>
+							<li>Codé en GO par Kevin Dunglas, fondateur de Les-Tilleuls.coop, à l'origine d'API Platform également et membre de la core team de Symfony</li>
+							<li>Protocole utilisable par n'importe quel langage (librairies en Java, Python...)</li>
+						</ul>
+					</aside>
+				</section>
+				<section data-background-image="img/mercure-website.png">
+					<div class="over-background right">
+						<h2>Comment ça fonctionne ?</h2>
+					</div>
+					<aside class="notes">
+						Décrire processus de Mercure (ressource maj, publication sur le hub avec un topic, envoi à tous les abonnés)
+					</aside>
+				</section>
+				<section>
+					<h2>Demo time</h2>
+					<a href="http://localhost" target="_blank">pizza project</a>
+				</section>
+				<section>
+					<h2>Ce qu'il se passe concrètement</h2>
+					<p>Une requête POST → hub de Mercure</p>
+					<pre><code>
+	{
+		"data": {},
+		"topic": '',
+		"targets": ['']
+	}
+					</code></pre>
+				</section>
+				<section>
+					<h2>Les petits plus cools</h2>
+					<ul>
+						<li>Les targets</li>
+						<li>La protection du hub via un JWT</li>
+					</ul>
+					<p>Et les deux sont liés...</p>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						## Des questions ? 🤓
+					</textarea>
+				</section>
 			</div>
 		</div>
 
 		<script src="js/reveal.js"></script>
 
 		<script>
-			// More info about config & dependencies:
-			// - https://github.com/hakimel/reveal.js#configuration
-			// - https://github.com/hakimel/reveal.js#dependencies
 			Reveal.initialize({
+				controlsTutorial: false,
 				hash: true,
+				progress: false,
 				dependencies: [
 					{ src: 'plugin/markdown/marked.js' },
 					{ src: 'plugin/markdown/markdown.js' },
